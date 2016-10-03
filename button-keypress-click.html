@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Button keypress and click, test 1</title>
+	<style>
+		*:focus{
+			outline: 5px solid red;
+		}
+	</style>
+</head>
+
+
+<body>
+<button id="thebutton">The button</button>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+
+
+		var btn = document.getElementById('thebutton');
+		btn.focus();
+		
+		
+		btn.addEventListener('click', function (e) {
+			console.log("click");
+		});
+		btn.addEventListener('keypress', function (e) {
+			console.log("keypress");
+		});
+		btn.addEventListener('keydown', function (e) {
+			console.log("keydown");
+		});
+		btn.addEventListener('keyup', function (e) {
+			console.log("keyup");
+		});
+	});
+</script>
+
+
+</body>
+</html>

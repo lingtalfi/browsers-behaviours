@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Button keypress and click, test 1</title>
+	<style>
+		*:focus{
+			outline: 5px solid red;
+		}
+	</style>
+</head>
+
+
+<body>
+<button id="thebutton">The button with keypress prevents default</button>
+<button id="thebutton2">The button with keydown prevents default</button>
+<button id="thebutton3">The button with keyup prevents default</button>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+
+
+		var btn = document.getElementById('thebutton');
+		var btn2 = document.getElementById('thebutton2');
+		var btn3 = document.getElementById('thebutton3');
+		btn3.focus();
+		
+		
+		btn.addEventListener('click', function (e) {
+			console.log("click");
+		});
+		btn.addEventListener('keypress', function (e) {
+			e.preventDefault();
+			console.log("keypress");
+		});
+		btn.addEventListener('keydown', function (e) {
+			console.log("keydown");
+		});
+		btn.addEventListener('keyup', function (e) {
+			console.log("keyup");
+		});
+		
+		
+		btn2.addEventListener('click', function (e) {
+			console.log("click");
+		});
+		btn2.addEventListener('keypress', function (e) {
+			console.log("keypress");
+		});
+		btn2.addEventListener('keydown', function (e) {
+			e.preventDefault();
+			console.log("keydown");
+		});
+		btn2.addEventListener('keyup', function (e) {
+			console.log("keyup");
+		});
+		
+		
+		btn3.addEventListener('click', function (e) {
+			console.log("click");
+		});
+		btn3.addEventListener('keypress', function (e) {
+			console.log("keypress");
+		});
+		btn3.addEventListener('keydown', function (e) {
+			console.log("keydown");
+		});
+		btn3.addEventListener('keyup', function (e) {
+			e.preventDefault();
+			console.log("keyup");
+		});
+	});
+</script>
+
+
+</body>
+</html>
