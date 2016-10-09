@@ -208,4 +208,40 @@ Ie11 and chromium based browsers (chrome, safari, opera) seems to add 50+px to t
 
 
   
+Working around
+--------------------
+
+I filed the chrome bug to chromium:
+
+- https://bugs.chromium.org/p/chromium/issues/detail?id=652626
+- https://bugs.chromium.org/p/chromium/issues/detail?id=654260
+
+
+The second time I noticed that wrapping the code into a setTimeout with enough delay "resolves" the problem.
+
+A delay of 10ms is not enough for chrome, but 50 was in local.
+
+Then putting this bug online: http://codepen.io/lingtalfi/pen/dpmOPp,
+I noticed that even Firefox had the problem.
+
+So, this probably means that browsers take some time to make that computation.
+
+Note: this isn't related to the load event (I just tried and it failed in safari).
+So the code below fails in safari, that's because it's dependent on time, not on the load event.
+
+```js
+	window.addEventListener("load", function(event) {
+		// now values might be consistent? => Actually not in local safari (and maybe other browsers)...
+	});
+```
+
+
+
+
+
+
+
+
+
+
 
