@@ -81,9 +81,9 @@ Assets
 
 
 <script>
-	var btn1 = document.querySelector('btn1');
-	var btn2 = document.querySelector('btn2');
-	var btn3 = document.querySelector('btn3');
+	var btn1 = document.getElementById('btn1');
+	var btn2 = document.getElementById('btn2');
+	var btn3 = document.getElementById('btn3');
 	console.log(btn1.getBoundingClientRect());
 	console.log(btn2.getBoundingClientRect());
 	console.log(btn3.getBoundingClientRect());
